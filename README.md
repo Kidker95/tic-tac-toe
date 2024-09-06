@@ -16,18 +16,15 @@ Custom CSS: For additional styling and layout control, including the Tic Tac Toe
 How to Run:
 Clone the repository:
 
-bash
-Copy code
+
 git clone https://github.com/yourusername/tic-tac-toe-game.git
 Install dependencies:
 
-bash
-Copy code
+
 npm install
 Start the development server:
 
-bash
-Copy code
+
 npm start
 Open your browser and navigate to http://localhost:3000 to start playing!
 
