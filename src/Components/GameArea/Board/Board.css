@@ -1,0 +1,16 @@
+.Board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+  
+   
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
+}
+
+.Board > * {
+    
+    border-radius: 8px;
+}
+
