@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { notify } from "../../../Utils/Notify"; // Import the notification system
 import { Board } from "../Board/Board";
 import "./Game.css";
+import { BackgroundChanger } from "../../SharedArea/BackgroundChanger/BackgroundChanger";
 
 // Define the winning lines outside of the functions to avoid duplication
 const winningLines = [
@@ -16,7 +17,7 @@ const Game: React.FC = () => {
         for (let i = 0; i < winningLines.length; i++) {
             const [a, b, c] = winningLines[i];
             if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
-                notify.success(`${cells[a]} has won!`)
+                notify.success(`${cells[a]} has won!`);
                 return cells[a];  // Return 'X' or 'O' as the winner
             }
         }
@@ -111,9 +112,11 @@ const Game: React.FC = () => {
 
     return (
         <div className="Game">
+            {/* Render BackgroundChanger only before mode is selected */}
+           
             {!mode ? (
                 <div>
-                    <h3>Select Mode</h3>
+                    <h3>Tic Tac Toe</h3>
                     <Button variant="outlined" sx={{ color: 'black', borderColor: 'black',  margin: '10px' }} onClick={() => setMode('playerVsPlayer')}>Player vs Player</Button>
                     <Button variant="outlined" sx={{ color: 'black', borderColor: 'black',  margin: '10px' }} onClick={() => setMode('playerVsPC')}>Player vs PC</Button>
                 </div>
@@ -124,6 +127,7 @@ const Game: React.FC = () => {
                     <Button variant="outlined" sx={{ color: 'black', borderColor: 'black',  margin: '10px' }} onClick={() => window.location.reload()}>Restart Game</Button>
                 </>
             )}
+             {!mode && <BackgroundChanger />}
         </div>
     );
 };
