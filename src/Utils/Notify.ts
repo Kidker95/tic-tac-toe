@@ -22,7 +22,7 @@ class Notify {
             title: 'Error',
             text: message,
             showConfirmButton: true,
-            confirmButtonText: "Next Game?", // Correct confirm button text
+            confirmButtonText: "Next Game?",
             position: 'center',
         }).then((result) => {
             if (result.isConfirmed) {
@@ -30,6 +30,24 @@ class Notify {
             }
         });
     }
+
+    public draw(message: string) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Draw',
+            text: message,
+            showConfirmButton: true,
+            confirmButtonText: "Next Game?",
+            position: 'center',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.reload(); // Reload only if the "Oh No! Computer Wins" button is pressed
+            }
+        });
+
+    }
+
 }
+
 
 export const notify = new Notify();

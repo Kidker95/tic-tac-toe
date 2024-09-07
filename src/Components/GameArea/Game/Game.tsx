@@ -97,7 +97,7 @@ const Game: React.FC = () => {
                 }
             }
         } else if (isBoardFull) {
-            notify.success("It's a draw!");
+            notify.draw("It's a draw!");
         }
     }, [winner, isBoardFull, mode]);
 
